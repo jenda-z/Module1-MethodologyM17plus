@@ -2,10 +2,10 @@ import pandas as pd
 import docx 
 import os
 
-year = 24
+year = 23
 
 # Load the Excel file
-df = pd.read_excel('24_evaluations_filtered.xlsx')
+df = pd.read_excel(str(year) + '_evaluations_filtered.xlsx')
 
 oldColumns = ['Druh ', 'Kritérium', 'Autoři', 'Název výsledku', 'Obor (Ford)', 'Zdůvodnění', 'Finální známka']
 newColumns = [ 'Text1', 'Text2', 'Text3', 'Text4']
@@ -41,4 +41,4 @@ for res in results:
     filtered_df = pd.concat([filtered_df, res_df], ignore_index=True)
 
 # Save the filtered data to a new Excel file
-filtered_df.to_excel('24_fce_evaluations_chatgpt.xlsx', index=False)
+filtered_df.to_excel(str(year) + '_fce_evaluations_chatgpt.xlsx', index=False)

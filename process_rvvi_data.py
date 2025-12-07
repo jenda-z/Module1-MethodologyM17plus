@@ -5,7 +5,7 @@ year = 24
 # Load the Excel file
 df = pd.read_excel('M1_VO_posudky_H20-H24.xlsx', header=2)
 
-# Filter rows where 'Období' column contains 'H20'
+# Filter rows where 'Období' column equals 'H' + year
 filtered_df = df[ 
     (df['Období'] == ('H' + str(year))) & 
     (df['Organizační jednotka'] == 'České vysoké učení technické v Praze/Fakulta stavební') 
